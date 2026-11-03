@@ -1,6 +1,6 @@
-# homebrew-maple 🍁
+# homebrew-tap 🍁
 
-Official [Homebrew](https://brew.sh/) Tap for **[Maple](https://github.com/liceal/Maple)** — 原生极速 macOS 多窗格双栏访达文件管理器。
+Official Homebrew Tap for **[Maple](https://github.com/liceal/Maple)** — 原生极速 macOS 多窗格双栏访达文件管理器。
 
 ---
 
@@ -11,19 +11,18 @@ Official [Homebrew](https://brew.sh/) Tap for **[Maple](https://github.com/licea
 无需事先手动添加 tap，直接运行：
 
 ```bash
-brew install liceal/maple
+brew install liceal/tap/maple
 ```
 
-或者显式指定 cask 安装：
-
-```bash
-brew install --cask liceal/maple/maple
-```
+> 💡 如果之前使用的是 `liceal/maple`，也可以直接执行：
+> ```bash
+> brew install liceal/maple
+> ```
 
 ### 方式二：先 Tap 后安装
 
 ```bash
-brew tap liceal/maple
+brew tap liceal/tap
 brew install --cask maple
 ```
 
@@ -43,15 +42,15 @@ brew upgrade maple
 # 常规卸载
 brew uninstall maple
 
-# 彻底清理配置文件与状态
+# 彻底清理应用及偏好设置文件
 brew uninstall --zap maple
 ```
 
 ---
 
-## 💡 特性说明
+## 💡 特性与说明
 
-- **全架构支持**：自动识别 Apple Silicon (M系列架构 `arm64`) 与 Intel (`x86_64`)。
-- **Gatekeeper 隔离净化**：配置内置 `postflight` 净化属性，避免未签名应用弹出拦截提示。
+- **双架构原生适配**：根据用户 Mac 芯片架构自动匹配下载 Apple Silicon（M系列 `arm64`）或 Intel（`x86_64`）专属构建。
+- **Gatekeeper 隔离净化**：配置中内置 `postflight_steps` 自动清除 macOS 隔离属性（`com.apple.quarantine`），安装后直接在启动台/访达点击即可秒开，解决未签名 App 提示拦截或需要去“隐私与安全性”点“仍要打开”的问题。
 - **官方主页**：[maple.linxianao.com](https://maple.linxianao.com)
-- **源码仓库**：[liceal/Maple](https://github.com/liceal/Maple)
+- **主项目源码**：[liceal/Maple](https://github.com/liceal/Maple)
