@@ -1,11 +1,11 @@
 cask "maple" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "1.0.0"
-  sha256 arm:   "eff419cc1cfd9e8319e9f0246c79b382d4cab8bf91548c413e326848a536fc8f",
-         intel: "1e2b5ee7cc9e4787c48fb4565fcf08d2882499fd87e3f6f2ca25aa30726aa9e6"
+  version "1.0.3"
+  sha256 arm:   "4811b5b429e37ff0919d10664abd77f6df5fc7418fcd78a739a9df1c41b8f0b2",
+         intel: "8adac8fd3079ab2ae659d97b78d521b7ca1f227fb9c338013956b34474736ac7"
 
-  url "https://github.com/liceal/Maple/releases/download/#{version}/Maple-#{version}-#{arch}.dmg"
+  url "https://github.com/liceal/Maple/releases/download/v#{version}/Maple-#{arch}.dmg"
   name "Maple"
   desc "极速多窗格双栏访达文件管理器"
   homepage "https://github.com/liceal/Maple"
@@ -15,8 +15,8 @@ cask "maple" do
 
   app "Maple.app"
 
-  postflight_steps do
-    run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/Maple.app"]
+  postflight do
+    system_command "/usr/bin/xattr", args: ["-cr", "#{appdir}/Maple.app"]
   end
 
   zap trash: [
